@@ -15,11 +15,9 @@ jobs:
     environment: terraform
 
     steps:
-      - name: Output private ip
-        if: success()
+      - name: Create empty global.auto.tfvars
         run: |
-          echo -n "Empty file for download in side-cd-workflow.yml" > "${{ runner.temp }}/global.auto.tfvars"
-          cat "${{ runner.temp }}/global.auto.tfvars"
+          touch "${{ runner.temp }}/global.auto.tfvars"
 
       - name: Upload private ip
         uses: actions/upload-artifact@v3
