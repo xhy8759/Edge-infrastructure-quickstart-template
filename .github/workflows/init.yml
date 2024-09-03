@@ -8,8 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  setup-virtualenv:
-    needs: automation-cleanup
+  upload-artifact:
     name: Terraform
     # runs-on: [windows-latest]
     runs-on: [self-hosted]
