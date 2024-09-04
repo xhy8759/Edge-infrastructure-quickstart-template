@@ -8,7 +8,14 @@ module "base" {
   defaultGateway  = "192.168.1.1"
   dnsServers      = ["192.168.1.254"]
   adouSuffix      = "DC=jumpstart,DC=local"
-  domainServerIP  = "10.1.0.6"
+  // Beginning of specific varible for virtual environment
+  dcPort = 6985
+  serverPorts = {
+    "AzSHOST1" = 15985,
+    "AzSHOST2" = 25985
+  }
+  virtualHostIp  = "10.1.0.6"
+  domainServerIP = "192.168.1.254"
   servers = [
     {
       name        = "AzSHOST1",
